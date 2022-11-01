@@ -108,7 +108,7 @@
             </a>
           </li>
           <li class="nav-item active">
-            <a href="pages/dashboard/dashboard.html" class="nav-link">
+            <a href="/dashboard" class="nav-link">
               <span class="sidebar-icon">
                 <svg
                   class="icon icon-xs me-2"
@@ -123,7 +123,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/transactions.html" class="nav-link">
+            <a href="/about" class="nav-link">
               <span class="sidebar-icon">
                 <svg
                   class="icon icon-xs me-2"
@@ -148,13 +148,8 @@
         <div class="row">
           <div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
             <p class="mb-0 text-center text-lg-start">
-              © 2019-<span class="current-year"></span>
-              <a
-                class="text-primary fw-normal"
-                href="https://themesberg.com"
-                target="_blank"
-                >Themesberg</a
-              >
+              © <span class="current-year"></span>
+              Adine Pramesti G
             </p>
           </div>
         </div>
