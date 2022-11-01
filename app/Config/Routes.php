@@ -18,7 +18,7 @@ if (is_file(SYSTEMPATH . 'Config/Routes.php')) {
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Arsip');
-$routes->setDefaultMethod('index');
+$routes->setDefaultMethod('home');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 // The Auto Routing (Legacy) is very dangerous. It is easy to create vulnerable apps
@@ -39,6 +39,9 @@ $routes->set404Override();
 //ROUTES ARSIP
 // $routes->get('/', 'Home::index');
 $routes->get('/', 'Arsip::home');
+$routes->get('/dashboard', 'Arsip::dashboard');
+$routes->get('/form', 'Arsip::form');
+$routes->get('/about', 'Arsip::about');
 
 /*
  * --------------------------------------------------------------------

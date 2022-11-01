@@ -8,4 +8,19 @@ class Arsip extends BaseController
     {
         return view('arsip/index');
     }
+    
+    public function dashboard()
+    {
+        return view('arsip/dashboard');
+    }
+    
+    public function form()
+    {
+        return view('arsip/form');
+    }
+    
+    public function about()
+    {
+        return view('arsip/about');
+    }
 }
