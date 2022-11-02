@@ -1,0 +1,32 @@
+CRITICAL - 2022-11-02 10:41:40 --> Undefined variable $validation
+in APPPATH\Views\arsip\form.php on line 95.
+ 1 APPPATH\Views\arsip\form.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'APPPATH\\Views\\arsip\\form.php', 95)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\arsip\\form.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('arsip/form', [], true)
+ 5 APPPATH\Controllers\Arsip.php(27): view('arsip/form')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Arsip->form()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arsip))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-02 10:42:39 --> Undefined variable $validation
+in APPPATH\Views\arsip\form.php on line 95.
+ 1 APPPATH\Views\arsip\form.php(95): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $validation', 'APPPATH\\Views\\arsip\\form.php', 95)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\arsip\\form.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('arsip/form', [], true)
+ 5 APPPATH\Controllers\Arsip.php(27): view('arsip/form')
+ 6 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Arsip->form()
+ 7 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arsip))
+ 8 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-02 11:34:22 --> Undefined property: App\Controllers\Arsip::$PerdimDewasaModel
+in APPPATH\Controllers\Arsip.php on line 63.
+ 1 APPPATH\Controllers\Arsip.php(63): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Arsip::$PerdimDewasaModel', 'APPPATH\\Controllers\\Arsip.php', 63)
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Arsip->save()
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arsip))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')

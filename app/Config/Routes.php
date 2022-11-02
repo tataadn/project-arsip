@@ -41,6 +41,7 @@ $routes->set404Override();
 $routes->get('/', 'Arsip::home');
 $routes->get('/dashboard', 'Arsip::dashboard');
 $routes->get('/form', 'Arsip::form');
+$routes->post('/save', 'Arsip::save');
 $routes->get('/about', 'Arsip::about');
 
 /*
