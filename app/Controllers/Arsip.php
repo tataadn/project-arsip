@@ -37,7 +37,7 @@ class Arsip extends BaseController
     {
 
         if(!$this->validate([
-            'nomor_surat' => 'required',
+            'nomor_surat' => 'required|is_unique[arsip.nomor_surat]',
             'kategori' => 'required',
             'judul' => 'required',
             'filepdf' => 'uploaded[filepdf]|max_size[filepdf,2048]|ext_in[filepdf,pdf]|mime_in[filepdf,application/pdf]'

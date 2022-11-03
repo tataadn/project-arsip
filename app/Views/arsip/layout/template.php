@@ -108,7 +108,7 @@
             </a>
           </li>
           <li class="nav-item active">
-            <a href="/dashboard" class="nav-link">
+            <a href="/home" class="nav-link">
               <span class="sidebar-icon">
                 <svg
                   class="icon icon-xs me-2"
@@ -159,25 +159,21 @@
     <!-- Core -->
     <script src="vendor/@popperjs/core/dist/umd/popper.min.js"></script>
     <script src="vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    
     <!-- Vendor JS -->
     <script src="vendor/onscreen/dist/on-screen.umd.min.js"></script>
-
+    
     <!-- Slider -->
     <script src="vendor/nouislider/dist/nouislider.min.js"></script>
-
+    
     <!-- Smooth scroll -->
     <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
-    <!-- Charts -->
-    <!-- <script src="vendor/chartist/dist/chartist.min.js"></script>
-    <script src="vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script> -->
-
-    <!-- Datepicker -->
-    <!-- <script src="vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script> -->
-
+    
     <!-- Sweet Alerts 2 -->
+    <script src="assets/js/script.js"></script>
     <script src="vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!-- <script src="assets/js/script.js"></script> -->
 
     <!-- Moment JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
