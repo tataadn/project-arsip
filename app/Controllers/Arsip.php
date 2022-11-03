@@ -32,39 +32,38 @@ class Arsip extends BaseController
     
     public function save()
     {
-        // $data = [
-        //     'nomor_surat' => $this->request->getVar('nomor_surat'),
-        //     'kategori' => $this->request->getVar('kategori'),
-        //     'judul' => $this->request->getVar('judul'),
-        //     'filepdf' => $this->request->getFile('filepdf'),
-        // ];
 
         if(!$this->validate([
             'nomor_surat' => 'required',
             'kategori' => 'required',
             'judul' => 'required',
-            // 'filepdf' => 'required|uploaded[filepdf]|mime_in[filepdf,application/pdf]'
+            'filepdf' => 'required|uploaded[filepdf]|mime_in[filepdf,application/pdf]|ext_in[filepdf,pdf]'
         ])){
             session()->setFlashdata('error','Mohon cek kembali data Anda!');
             return redirect()->to('/form')->withInput();
+        } 
+        
+        else{
+            $nosurat = $this->request->getVar('nomor_surat');
+            $kategori = $this->request->getVar('kategori');
+            $judul = $this->request->getVar('judul');
+            $filepdf = $this->request->getFile('filepdf');
+            
+            //kelola penyimpanan file
+            $fileName = $filepdf->getName();
+            
+            $this->ArsipModel->insert([
+                'nomor_surat' => $nosurat,
+                'kategori' => $kategori,
+                'judul' => $judul,
+                'filepdf' => $fileName
+            ]);
+            
+            $filepdf->move(ROOTPATH . 'upload');     
+            
+            session()->setFlashdata('success','Data berhasil ditambahkan!');
+            return redirect()->to('/form')->withInput();
         }
-
-        $nosurat = $this->request->getVar('nomor_surat');
-        $kategori = $this->request->getVar('kategori');
-        $judul = $this->request->getVar('judul');
-        // $filepdf = $this->request->getFile('filepdf');
-        // $fileName = $filepdf->getRandomName();
-        
-        $this->ArsipModel->insert([
-            'nomor_surat' => $nosurat,
-            'kategori' => $kategori,
-            'judul' => $judul
-            // 'filepdf' => $fileName
-        ]);
-        
-        // $filepdf->move('uploads', $fileName);
-        session()->setFlashdata('success','Data berhasil ditambahkan!');
-        return redirect()->to('/form')->withInput();
     }
     
     public function about()

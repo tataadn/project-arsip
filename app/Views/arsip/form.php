@@ -141,16 +141,16 @@
                       </div>
                   </div>
               </div>
-              <!-- <div class="mb-2">
+              <div class="mb-2">
                   <div class="row">
                       <div class="col-2 pt-1">
-                          <label for="formFile" class="form-label">File Surat (PDF)</label>
+                          <label for="filepdf" class="form-label">File Surat (PDF)</label>
                       </div>
                       <div class="col-8">
-                          <input class="form-control" name="filepdf" type="file" id="formFile">
+                          <input type="file" name="filepdf" class="form-control <?= ($validation->hasError('filepdf')) ? 'is-invalid' : '' ?>" id="filepdf" value="<?= old('filepdf'); ?>">
                       </div>
                   </div>
-              </div> -->
+              </div>
             </div>
         </div>
     </div>
@@ -162,12 +162,10 @@
           <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/></svg>
           Kembali
         </a>
-        <a href="/save">
-            <button class="btn btn-gray-800 d-inline-flex align-items-center me-2">
-                <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/></svg>
-                Simpan
-            </button>
-        </a>
+        <button class="btn btn-gray-800 d-inline-flex align-items-center me-2" type="submit" >
+            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9.5a1 1 0 0 0-1 1v7.293l2.646-2.647a.5.5 0 0 1 .708.708l-3.5 3.5a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L7.5 9.293V2a2 2 0 0 1 2-2H14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h2.5a.5.5 0 0 1 0 1H2z"/></svg>
+            Simpan
+        </button>
     </div>
   </div>
 </form>

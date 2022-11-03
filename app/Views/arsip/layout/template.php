@@ -25,7 +25,7 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/img/logo-kelurahan.svg">
-    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
+    <!-- <link rel="manifest" href="assets/img/favicon/site.webmanifest" /> -->
     <link
       rel="mask-icon"
       href="assets/img/favicon/safari-pinned-tab.svg"
@@ -164,17 +164,17 @@
     <script src="vendor/onscreen/dist/on-screen.umd.min.js"></script>
 
     <!-- Slider -->
-    <script src="vendor/nouislider/distribute/nouislider.min.js"></script>
+    <script src="vendor/nouislider/dist/nouislider.min.js"></script>
 
     <!-- Smooth scroll -->
     <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
     <!-- Charts -->
-    <script src="vendor/chartist/dist/chartist.min.js"></script>
-    <script src="vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
+    <!-- <script src="vendor/chartist/dist/chartist.min.js"></script>
+    <script src="vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script> -->
 
     <!-- Datepicker -->
-    <script src="vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script>
+    <!-- <script src="vendor/vanillajs-datepicker/dist/js/datepicker.min.js"></script> -->
 
     <!-- Sweet Alerts 2 -->
     <script src="vendor/sweetalert2/dist/sweetalert2.all.min.js"></script>

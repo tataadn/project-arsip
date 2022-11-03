@@ -6,12 +6,12 @@ use CodeIgniter\Model;
 
 class ArsipModel extends Model
 {
-    // protected $DBGroup          = 'default';
+    protected $DBGroup          = 'default';
     protected $table            = 'arsip';
     protected $primaryKey       = 'id_arsip';
     protected $useAutoIncrement = true;
     // protected $insertID         = 0;
-    protected $returnType       = 'array';
+    protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     // protected $protectFields    = true;
     protected $allowedFields    = ['nomor_surat','kategori','judul','filepdf'];
