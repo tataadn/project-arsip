@@ -138,24 +138,23 @@
                       </thead>
                       <tbody>
                           <!-- Item -->
+                          <?php foreach ($arsip as $row) :
+                          ?>
                           <tr>
-                              <td><a href="#" class="text-primary fw-bold">1</a> </td>
+                              <td><?= $row->nomor_surat; ?></td>
+                              <td><?= $row->kategori; ?></td>
+                              <td><?= $row->judul; ?></td>
+                              <td><?= $row->created_at; ?></td>
                               <td>
-                                  Direct
-                              </td>
-                              <td>
-                                  Direct
-                              </td>
-                              <td>
-                              - 
-                              </td>
-                              <td>
-                                  <button class="btn btn-danger" type="button">Hapus</button>
-                                  <button class="btn btn-warning" type="button">Unduh</button>
-                                  <button class="btn btn-info" type="button">Lihat</button>
+                                <a href="/delete/<?= $row->id_arsip; ?>" class="btn btn-danger" type="button">Hapus</a>
+                                <a href="#" class="btn btn-warning" type="button">Unduh</a>
+                                <a href="#" class="btn btn-info" type="button">Lihat</a>
+                                <!-- <button class="btn btn-warning" type="button">Unduh</button>
+                                <button class="btn btn-info" type="button">Lihat</button> -->
                               </td>
                           </tr>
                           <!-- End of Item -->
+                          <?php endforeach; ?>
                       </tbody>
                   </table>
               </div>

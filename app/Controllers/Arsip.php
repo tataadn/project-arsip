@@ -19,7 +19,10 @@ class Arsip extends BaseController
     
     public function dashboard()
     {
-        return view('arsip/dashboard');
+        $arsipModel = new ArsipModel();
+        $arsip = $arsipModel->findAll();
+        $data = array('arsip' => $arsip);
+        return view('arsip/dashboard', $data);
     }
     
     public function form()
@@ -37,33 +40,44 @@ class Arsip extends BaseController
             'nomor_surat' => 'required',
             'kategori' => 'required',
             'judul' => 'required',
-            'filepdf' => 'required|uploaded[filepdf]|mime_in[filepdf,application/pdf]|ext_in[filepdf,pdf]'
+            'filepdf' => 'uploaded[filepdf]|max_size[filepdf,2048]|ext_in[filepdf,pdf]|mime_in[filepdf,application/pdf]'
         ])){
             session()->setFlashdata('error','Mohon cek kembali data Anda!');
             return redirect()->to('/form')->withInput();
         } 
         
         else{
-            $nosurat = $this->request->getVar('nomor_surat');
-            $kategori = $this->request->getVar('kategori');
-            $judul = $this->request->getVar('judul');
-            $filepdf = $this->request->getFile('filepdf');
-            
-            //kelola penyimpanan file
-            $fileName = $filepdf->getName();
-            
-            $this->ArsipModel->insert([
-                'nomor_surat' => $nosurat,
-                'kategori' => $kategori,
-                'judul' => $judul,
-                'filepdf' => $fileName
-            ]);
-            
-            $filepdf->move(ROOTPATH . 'upload');     
+
+            //mengambil file foto yg akan diupload di form
+            $file_arsip = $this->request->getFile('filepdf');
+            //merandom nama file foto
+            $nama_file = $file_arsip->getRandomName();
+
+            $data = [
+                'nomor_surat' => $this->request->getVar('nomor_surat'),
+                'kategori' => $this->request->getVar('kategori'),
+                'judul' => $this->request->getVar('judul'),
+                'filepdf' => $nama_file,
+            ];
+
+            $file_arsip->move('file_arsip', $nama_file); //directori upload file
+            $this->ArsipModel->insert($data);  
             
             session()->setFlashdata('success','Data berhasil ditambahkan!');
             return redirect()->to('/form')->withInput();
         }
+    }
+    
+    public function delete($id)
+    {
+        $arsipModel = new ArsipModel();
+        $data = $arsipModel->find($id);
+        $filePdf = $data->filepdf;
+        if(file_exists('file_arsip/'.$filePdf)){
+            unlink('file_arsip/'.$filePdf);
+        }
+        $arsipModel->delete($id);
+        return redirect()->back();
     }
     
     public function about()
