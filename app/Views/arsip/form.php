@@ -114,7 +114,7 @@
                       <div class="col-8">
                           <input type="text" name="nomor_surat" class="form-control <?= ($validation->hasError('nomor_surat')) ? 'is-invalid' : '' ?>" id="nomor" value="<?= old('nomor_surat'); ?>" autofocus>
                           <div class="invalid-feedback">
-                            Please choose a username.
+                            <?= $validation->getError('nomor_surat') ?>
                           </div>
                       </div>
                   </div>
@@ -141,6 +141,9 @@
                       </div>
                       <div class="col-8">
                           <input type="text" name="judul" class="form-control <?= ($validation->hasError('judul')) ? 'is-invalid' : '' ?>" id="judul" value="<?= old('judul'); ?>">
+                          <div class="invalid-feedback">
+                            <?= $validation->getError('judul') ?>
+                          </div>
                       </div>
                   </div>
               </div>
@@ -151,6 +154,9 @@
                       </div>
                       <div class="col-8">
                           <input type="file" name="filepdf" class="form-control <?= ($validation->hasError('filepdf')) ? 'is-invalid' : '' ?>" id="filepdf" value="<?= old('filepdf'); ?>">
+                          <div class="invalid-feedback">
+                            <?= $validation->getError('filepdf') ?>
+                          </div>
                       </div>
                   </div>
               </div>

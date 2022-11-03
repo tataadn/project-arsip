@@ -35,13 +35,36 @@ class Arsip extends BaseController
     
     public function save()
     {
+        $validasi = !$this->validate([
+                        'nomor_surat' => [
+                            'rules' => 'required|is_unique[arsip.nomor_surat]',
+                            'errors' => [
+                                'required' => 'nomor surat harus diisi',
+                                'is_unique' => 'nomor surat sudah terdaftar'
+                            ]
+                        ],
 
-        if(!$this->validate([
-            'nomor_surat' => 'required|is_unique[arsip.nomor_surat]',
-            'kategori' => 'required',
-            'judul' => 'required',
-            'filepdf' => 'uploaded[filepdf]|max_size[filepdf,2048]|ext_in[filepdf,pdf]|mime_in[filepdf,application/pdf]'
-        ])){
+                        'kategori' => 'required',
+
+                        'judul' => [
+                            'rules' => 'required',
+                            'errors' => [
+                                'required' => 'judul harus diisi'
+                            ]
+                        ],
+                        
+                        'filepdf' => [
+                            'rules' => 'uploaded[filepdf]|max_size[filepdf,2048]|ext_in[filepdf,pdf]|mime_in[filepdf,application/pdf]',
+                            'errors' => [
+                                'uploaded' => 'file harus diisi',
+                                'max_size' => 'ukuran file terlalu besar',
+                                'ext_in' => 'file harus berformat pdf',
+                                'mime_in' => 'file harus berformat pdf'
+                            ]
+                        ],
+                    ]);
+
+        if($validasi){
             session()->setFlashdata('error','Mohon cek kembali data Anda!');
             return redirect()->to('/form')->withInput();
         } 
