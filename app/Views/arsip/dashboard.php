@@ -77,46 +77,22 @@
 </div>
 
 <div class="pb-4 py-2 col-12 col-xl-12">
-    <div class="row">
-        <div class="col-12 col-xl-2">
-            <h6 class="pt-2 text-end">Cari Surat:</h6>
-        </div>
-        <div class="col-12 col-xl-8">
-            <!-- Search form -->
-            <form class="navbar-search form-inline" id="navbar-search-main">
-                <div class="input-group input-group-merge search-bar">
-                <span class="input-group-text" id="topbar-addon">
-                    <svg
-                    class="icon icon-xs"
-                    x-description="Heroicon name: solid/search"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    aria-hidden="true"
-                    >
-                    <path
-                        fill-rule="evenodd"
-                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        clip-rule="evenodd"
-                    ></path>
-                    </svg>
-                </span>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="topbarInputIconLeft"
-                    placeholder="Search"
-                    aria-label="Search"
-                    aria-describedby="topbar-addon"
-                />
-                </div>
-            </form>
-            <!-- / Search form -->
-        </div>
-        <div class="col-12 col-xl-2">
-            <button class="btn btn-sm btn-primary" type="button">Search</button>
-        </div>
+  <div class="row">
+    <div class="col-12 col-xl-2">
+      <h6 class="pt-2 text-end">Cari Surat:</h6>
     </div>
+    <div class="col-12 col-xl-8">
+      <form method="get" action="" class="form-group">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Search data .." name="keyword">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" name="submit">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
     <div class="d-flex justify-content-start align-items-center w-100 flex-wrap">
     </div>
 </div>
@@ -148,7 +124,7 @@
                               <td>
                                 <a href="/delete/<?= $row->id_arsip; ?>" class="btn btn-danger btn-hapus" type="button">Hapus</a>
                                 <a href="#" class="btn btn-warning">Unduh</a>
-                                <a href="#" class="btn btn-info" type="button">Lihat</a>
+                                <a href="/preview/<?= $row->id_arsip; ?>" class="btn btn-info" type="button">Lihat</a>
                                 <!-- <button class="btn btn-warning" type="button">Unduh</button>
                                 <button class="btn btn-info" type="button">Lihat</button> -->
                               </td>

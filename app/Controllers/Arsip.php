@@ -19,6 +19,13 @@ class Arsip extends BaseController
     
     public function dashboard()
     {
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $cariArsip = $this->ArsipModel->search($keyword);
+        } else {
+            $cariArsip = $this->ArsipModel;
+        }
+
         $arsipModel = new ArsipModel();
         $arsip = $arsipModel->findAll();
         $data = array('arsip' => $arsip);
@@ -101,6 +108,18 @@ class Arsip extends BaseController
         }
         $arsipModel->delete($id);
         return redirect()->back();
+    }
+    
+    public function preview($id)
+    {
+        $arsipModel = new ArsipModel();
+        $data = $arsipModel->detail_data($id);
+        $filePdf = $data->filepdf;
+        // if(file_exists('file_arsip/'.$filePdf)){
+        //     unlink('file_arsip/'.$filePdf);
+        // }
+        // $arsipModel->delete($id);
+        return view('arsip/preview');
     }
     
     public function about()

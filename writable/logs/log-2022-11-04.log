@@ -1,0 +1,8 @@
+CRITICAL - 2022-11-04 02:43:27 --> view(): Argument #2 ($data) must be of type array, stdClass given, called in C:\xampp\htdocs\project_arsip\app\Controllers\Arsip.php on line 122
+in SYSTEMPATH\Common.php on line 1120.
+ 1 APPPATH\Controllers\Arsip.php(122): view('arsip/preview', Object(stdClass))
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Arsip->preview('3')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arsip))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
