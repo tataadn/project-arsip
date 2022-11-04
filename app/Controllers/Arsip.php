@@ -121,6 +121,13 @@ class Arsip extends BaseController
         // $arsipModel->delete($id);
         return view('arsip/preview');
     }
+
+    function download($id)
+	{
+		$arsip = new ArsipModel();
+		$data = $arsip->find($id);
+		return $this->response->download('file_arsip/' . $data->filepdf, null);
+	}
     
     public function about()
     {

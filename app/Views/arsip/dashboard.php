@@ -123,7 +123,7 @@
                               <td><?= $row->created_at; ?></td>
                               <td>
                                 <a href="/delete/<?= $row->id_arsip; ?>" class="btn btn-danger btn-hapus" type="button">Hapus</a>
-                                <a href="#" class="btn btn-warning">Unduh</a>
+                                <a href="/download/<?= $row->id_arsip; ?>" class="btn btn-warning">Unduh</a>
                                 <a href="/preview/<?= $row->id_arsip; ?>" class="btn btn-info" type="button">Lihat</a>
                                 <!-- <button class="btn btn-warning" type="button">Unduh</button>
                                 <button class="btn btn-info" type="button">Lihat</button> -->

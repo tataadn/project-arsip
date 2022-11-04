@@ -46,6 +46,8 @@ $routes->get('/form', 'Arsip::form');
 $routes->post('/save', 'Arsip::save');
 //routes untuk menghapus data
 $routes->get('/delete/(:num)', 'Arsip::delete/$1');
+//routes untuk mendownload file
+$routes->get('/download/(:num)', 'Arsip::download/$1');
 //routes untuk preview pdf
 $routes->get('/preview/(:num)', 'Arsip::preview/$1');
 

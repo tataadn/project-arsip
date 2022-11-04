@@ -6,3 +6,11 @@ in SYSTEMPATH\Common.php on line 1120.
  4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
  5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
  6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-04 14:39:19 --> Call to undefined method App\Models\ArsipModel::detail_data
+in SYSTEMPATH\Model.php on line 774.
+ 1 APPPATH\Controllers\Arsip.php(116): CodeIgniter\Model->__call('detail_data', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Arsip->preview('3')
+ 3 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arsip))
+ 4 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
