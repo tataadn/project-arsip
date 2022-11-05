@@ -49,8 +49,8 @@ $routes->get('/delete/(:num)', 'Arsip::delete/$1');
 //routes untuk mendownload file
 $routes->get('/download/(:num)', 'Arsip::download/$1');
 //routes untuk preview pdf
-$routes->get('/preview/(:num)', 'Arsip::preview/$1');
-
+$routes->get('/preview-(:num)', 'Arsip::preview/$1');
+//routes untuk about 
 $routes->get('/about', 'Arsip::about');
 
 /*

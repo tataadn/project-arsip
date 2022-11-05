@@ -110,16 +110,12 @@ class Arsip extends BaseController
         return redirect()->back();
     }
     
-    public function preview($id)
+    public function preview($id = null)
     {
         $arsipModel = new ArsipModel();
-        $data = $arsipModel->detail_data($id);
-        $filePdf = $data->filepdf;
-        // if(file_exists('file_arsip/'.$filePdf)){
-        //     unlink('file_arsip/'.$filePdf);
-        // }
-        // $arsipModel->delete($id);
-        return view('arsip/preview');
+        $filepdf = $arsipModel->detail_data($id);
+        $data = array('filepdf' => $filepdf);
+        return view('arsip/preview', $data);
     }
 
     function download($id)
