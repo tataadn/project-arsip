@@ -40,6 +40,14 @@ class Arsip extends BaseController
         return view('arsip/form', $data);
     }
     
+    public function edit($id)
+    {
+        $arsipModel = new ArsipModel();
+        $edit = $arsipModel->detail_data($id);
+        $data = array('edit' => $edit);
+        return view('arsip/edit', $data);
+    }
+    
     public function save()
     {
         $validasi = !$this->validate([
@@ -110,7 +118,7 @@ class Arsip extends BaseController
         return redirect()->back();
     }
     
-    public function preview($id = null)
+    public function preview($id)
     {
         $arsipModel = new ArsipModel();
         $filepdf = $arsipModel->detail_data($id);

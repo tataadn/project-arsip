@@ -27,6 +27,7 @@ class ArsipModel extends Model
         if($id_arsip == false){
             return $this->findAll();
         }
+        // return $this->getWhere($this->arsip, ["id_arsip" => $id_arsip])->result();
         return $this->where(['id_arsip' => $id_arsip])->first();
         // return $this->db->table('arsip')->where('id_arsip', $id_arsip)->get()->getRowArray();
     }

@@ -37,19 +37,22 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 //ROUTES ARSIP
-// $routes->get('/', 'Home::index');
+//routes untuk menampilkan halaman awal
 $routes->get('/', 'Arsip::home');
+//routes untuk menampilkan halaman utama
 $routes->get('/home', 'Arsip::dashboard');
+//routes untuk mengunggah file
 $routes->get('/form', 'Arsip::form');
-
+//routes untuk mengedit file
+$routes->get('/edit-(:num)', 'Arsip::edit/$1');
 //routes untuk menyimpan data
 $routes->post('/save', 'Arsip::save');
 //routes untuk menghapus data
 $routes->get('/delete/(:num)', 'Arsip::delete/$1');
-//routes untuk mendownload file
-$routes->get('/download/(:num)', 'Arsip::download/$1');
 //routes untuk preview pdf
 $routes->get('/preview-(:num)', 'Arsip::preview/$1');
+//routes untuk mendownload file
+$routes->get('/download/(:num)', 'Arsip::download/$1');
 //routes untuk about 
 $routes->get('/about', 'Arsip::about');
 
