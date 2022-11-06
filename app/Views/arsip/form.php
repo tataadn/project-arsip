@@ -43,7 +43,7 @@
           <div
             class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1"
           >
-            <a class="dropdown-item d-flex align-items-center" href="#">
+            <a class="dropdown-item d-flex align-items-center" href="/logout">
               <svg
                 class="dropdown-icon text-danger me-2"
                 fill="none"

@@ -104,21 +104,21 @@
                     </div>
                     <div class="d-flex row justify-content-center align-item-center">
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a href="#">
+                            <a href="/home">
                                 <div class="card bg-white shadow-soft text-primary rounded mb-4">
                                     <div class="px-3 px-lg-4 py-5 text-center">
                                         <img src="assets/img/login.png" width="200" alt="">
-                                        <h3 class="fw-bolder text-primary">Login</h3>
+                                        <h3 class="fw-bolder text-primary">Masuk</h3>
                                     </div>
                                 </div>
                             </a>
                         </div>
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a href="#">
+                            <a href="/register">
                                 <div class="card bg-white shadow-soft text-primary rounded mb-4">
                                     <div class="px-3 px-lg-4 py-5 text-center">
                                         <img src="assets/img/register.png" width="200" alt="">
-                                        <h3 class="fw-bolder text-primary">Register</h3>
+                                        <h3 class="fw-bolder text-primary">Daftar</h3>
                                     </div>
                                 </div>
                             </a>

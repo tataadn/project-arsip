@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57b1678af1f445af215e53aa7aca8e0d",
+    "content-hash": "dbdd91598be797b767f8daaf79eb882d",
     "packages": [
         {
             "name": "kint-php/kint",
@@ -134,6 +134,80 @@
             "time": "2022-10-10T10:11:09+00:00"
         },
         {
+            "name": "myth/auth",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lonnieezell/myth-auth.git",
+                "reference": "7d0347faa47bd754d2dc49593a9852800be73986"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lonnieezell/myth-auth/zipball/7d0347faa47bd754d2dc49593a9852800be73986",
+                "reference": "7d0347faa47bd754d2dc49593a9852800be73986",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4 || ^8.0"
+            },
+            "provide": {
+                "codeigniter4/authentication-implementation": "1.0"
+            },
+            "require-dev": {
+                "codeigniter4/codeigniter4-standard": "^1.0",
+                "codeigniter4/devkit": "^1.0",
+                "codeigniter4/framework": "^4.1",
+                "mockery/mockery": "^1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Myth\\Auth\\": "src"
+                },
+                "exclude-from-classmap": [
+                    "**/Database/Migrations/**"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Lonnie Ezell",
+                    "email": "lonnieje@gmail.com",
+                    "homepage": "http://newmythmedia.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Flexible authentication/authorization system for CodeIgniter 4.",
+            "homepage": "https://github.com/lonnieezell/myth-auth",
+            "keywords": [
+                "Authentication",
+                "authorization",
+                "codeigniter"
+            ],
+            "support": {
+                "issues": "https://github.com/lonnieezell/myth-auth/issues",
+                "source": "https://github.com/lonnieezell/myth-auth/tree/v1.2.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/lonnieezell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/mgatner",
+                    "type": "github"
+                },
+                {
+                    "url": "https://www.patreon.com/lonnieezell",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2022-07-13T18:35:46+00:00"
+        },
+        {
             "name": "psr/log",
             "version": "1.1.4",
             "source": {
@@ -241,16 +315,16 @@
         },
         {
             "name": "composer/pcre",
-            "version": "3.0.0",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
-                "reference": "e300eb6c535192decd27a85bc72a9290f0d6b3bd"
+                "reference": "4482b6409ca6bfc2af043a5711cd21ac3e7a8dfb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/e300eb6c535192decd27a85bc72a9290f0d6b3bd",
-                "reference": "e300eb6c535192decd27a85bc72a9290f0d6b3bd",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/4482b6409ca6bfc2af043a5711cd21ac3e7a8dfb",
+                "reference": "4482b6409ca6bfc2af043a5711cd21ac3e7a8dfb",
                 "shasum": ""
             },
             "require": {
@@ -292,7 +366,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/pcre/issues",
-                "source": "https://github.com/composer/pcre/tree/3.0.0"
+                "source": "https://github.com/composer/pcre/tree/3.0.2"
             },
             "funding": [
                 {
@@ -308,7 +382,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-25T20:21:48+00:00"
+            "time": "2022-11-03T20:24:16+00:00"
         },
         {
             "name": "composer/semver",

@@ -18,7 +18,7 @@ class Arsip extends BaseController
     }
     
     public function dashboard()
-    {
+    {   
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $cariArsip = $this->ArsipModel->search($keyword);
@@ -29,7 +29,6 @@ class Arsip extends BaseController
         $data = [
             'arsip' => $cariArsip->paginate(4,'arsip'),
             'pager' => $this->ArsipModel->pager,
-            // 'currentPage' => $this->request->getVar('page_arsip') ? $this->request->getVar('page_arsip') : 1
         ];
         return view('arsip/dashboard', $data);
     }

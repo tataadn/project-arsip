@@ -39,6 +39,8 @@ $routes->set404Override();
 //ROUTES ARSIP
 //routes untuk menampilkan halaman awal
 $routes->get('/', 'Arsip::home');
+$routes->get('/signin', 'Arsip::signin');
+$routes->get('/signup', 'Arsip::signup');
 //routes untuk menampilkan halaman utama
 $routes->get('/home', 'Arsip::dashboard');
 //routes untuk menampilkan pencarian data

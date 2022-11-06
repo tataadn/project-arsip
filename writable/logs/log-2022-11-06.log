@@ -807,3 +807,82 @@ in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
 11 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
 12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
 13 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-06 22:21:54 --> Invalid file: arsip/auth/sign-up.php
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(201): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('arsip/auth/sign-up.php')
+ 2 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('arsip/auth/sign-up', [], true)
+ 3 APPPATH\Controllers\Arsip.php(27): view('arsip/auth/sign-up')
+ 4 SYSTEMPATH\CodeIgniter.php(927): App\Controllers\Arsip->signup()
+ 5 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arsip))
+ 6 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+ERROR - 2022-11-06 22:51:14 --> Email: sendWithMail throwed ErrorException: mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\project_arsip\system\Email\Email.php:1730
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'mail(): Failed ...', 'C:\\xampp\\htdocs...', 1730)
+#1 C:\xampp\htdocs\project_arsip\system\Email\Email.php(1730): mail('adinep@gmail.co...', '=?UTF-8?Q?Activ...', 'This is a multi...', 'Date: Sun, 6 No...', '-f 2031730121@s...')
+#2 C:\xampp\htdocs\project_arsip\system\Email\Email.php(1662): CodeIgniter\Email\Email->sendWithMail()
+#3 C:\xampp\htdocs\project_arsip\system\Email\Email.php(1560): CodeIgniter\Email\Email->spoolEmail()
+#4 C:\xampp\htdocs\project_arsip\vendor\myth\auth\src\Authentication\Activators\EmailActivator.php(32): CodeIgniter\Email\Email->send()
+#5 C:\xampp\htdocs\project_arsip\vendor\myth\auth\src\Controllers\AuthController.php(185): Myth\Auth\Authentication\Activators\EmailActivator->send(Object(Myth\Auth\Entities\User))
+#6 C:\xampp\htdocs\project_arsip\system\CodeIgniter.php(927): Myth\Auth\Controllers\AuthController->attemptRegister()
+#7 C:\xampp\htdocs\project_arsip\system\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#8 C:\xampp\htdocs\project_arsip\system\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\project_arsip\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\project_arsip\system\Commands\Server\rewrite.php(46): require_once('C:\\xampp\\htdocs...')
+#11 {main}
+ERROR - 2022-11-06 22:51:14 --> Email: Unable to send email using PHP mail(). Your server might not be configured to send mail using this method.
+ERROR - 2022-11-06 22:51:14 --> 
+CRITICAL - 2022-11-06 22:57:09 --> Class name must be a valid object or a string
+in VENDORPATH\myth\auth\src\Config\Services.php on line 81.
+ 1 SYSTEMPATH\Config\BaseService.php(253): Myth\Auth\Config\Services::activator(Object(Myth\Auth\Config\Auth), false)
+ 2 SYSTEMPATH\Config\BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('activator', [...])
+ 3 VENDORPATH\myth\auth\src\Config\Services.php(74): CodeIgniter\Config\BaseService::getSharedInstance('activator', null)
+ 4 SYSTEMPATH\Config\BaseService.php(253): Myth\Auth\Config\Services::activator()
+ 5 SYSTEMPATH\Common.php(959): CodeIgniter\Config\BaseService::__callStatic('activator', [])
+ 6 VENDORPATH\myth\auth\src\Controllers\AuthController.php(184): service('activator')
+ 7 SYSTEMPATH\CodeIgniter.php(927): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-06 23:00:37 --> Class name must be a valid object or a string
+in VENDORPATH\myth\auth\src\Config\Services.php on line 81.
+ 1 SYSTEMPATH\Config\BaseService.php(253): Myth\Auth\Config\Services::activator(Object(Myth\Auth\Config\Auth), false)
+ 2 SYSTEMPATH\Config\BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('activator', [...])
+ 3 VENDORPATH\myth\auth\src\Config\Services.php(74): CodeIgniter\Config\BaseService::getSharedInstance('activator', null)
+ 4 SYSTEMPATH\Config\BaseService.php(253): Myth\Auth\Config\Services::activator()
+ 5 SYSTEMPATH\Common.php(959): CodeIgniter\Config\BaseService::__callStatic('activator', [])
+ 6 VENDORPATH\myth\auth\src\Controllers\AuthController.php(184): service('activator')
+ 7 SYSTEMPATH\CodeIgniter.php(927): Myth\Auth\Controllers\AuthController->attemptRegister()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-06 23:01:32 --> Class name must be a valid object or a string
+in VENDORPATH\myth\auth\src\Config\Services.php on line 81.
+ 1 SYSTEMPATH\Config\BaseService.php(253): Myth\Auth\Config\Services::activator(Object(Myth\Auth\Config\Auth), false)
+ 2 SYSTEMPATH\Config\BaseService.php(194): CodeIgniter\Config\BaseService::__callStatic('activator', [...])
+ 3 VENDORPATH\myth\auth\src\Config\Services.php(74): CodeIgniter\Config\BaseService::getSharedInstance('activator', null)
+ 4 SYSTEMPATH\Config\BaseService.php(253): Myth\Auth\Config\Services::activator()
+ 5 SYSTEMPATH\Common.php(959): CodeIgniter\Config\BaseService::__callStatic('activator', [])
+ 6 VENDORPATH\myth\auth\src\Controllers\AuthController.php(399): service('activator')
+ 7 SYSTEMPATH\CodeIgniter.php(927): Myth\Auth\Controllers\AuthController->resendActivateAccount()
+ 8 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+ 9 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
+CRITICAL - 2022-11-06 23:28:46 --> Undefined variable $title
+in APPPATH\Views\arsip\layout\template_admin.php on line 7.
+ 1 APPPATH\Views\arsip\layout\template_admin.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'APPPATH\\Views\\arsip\\layout\\template_admin.php', 7)
+ 2 SYSTEMPATH\View\View.php(213): include('APPPATH\\Views\\arsip\\layout\\template_admin.php')
+ 3 SYSTEMPATH\View\View.php(216): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\View\View.php(229): CodeIgniter\View\View->render('arsip/layout/template_admin', [], true)
+ 5 SYSTEMPATH\Common.php(1134): CodeIgniter\View\View->render('App\\Views\\arsip\\auth\\sign-in', [], true)
+ 6 VENDORPATH\myth\auth\src\Controllers\AuthController.php(412): view('App\\Views\\arsip\\auth\\sign-in', [...])
+ 7 VENDORPATH\myth\auth\src\Controllers\AuthController.php(58): Myth\Auth\Controllers\AuthController->_render('App\\Views\\arsip\\auth\\sign-in', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(927): Myth\Auth\Controllers\AuthController->login()
+ 9 SYSTEMPATH\CodeIgniter.php(482): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+10 SYSTEMPATH\CodeIgniter.php(351): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Commands\Server\rewrite.php(46): require_once('FCPATH\\index.php')
