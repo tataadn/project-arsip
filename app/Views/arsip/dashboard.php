@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
-  <div class="container-fluid px-0 pt-2">
+  <div class="container-fluid px-0">
     <div
       class="d-flex justify-content-between w-100"
       id="navbarSupportedContent"
@@ -67,7 +67,7 @@
   </div>
 </nav>
 
-<div class="pb-4 px-3 col-12 col-xl-12">
+<div class="pb-2 px-3 col-12 col-xl-12">
     <div class="d-flex justify-content-between w-100 flex-wrap">
         <div class="mb-3 mb-lg-0">
             <p class="mb-0">Berikut ini adalah surat-surat yang telah terbit dan diarsipkan. <br>
@@ -76,13 +76,13 @@
     </div>
 </div>
 
-<div class="pb-4 py-2 col-12 col-xl-12">
+<div class="pb-2 py-2 col-12 col-xl-12">
   <div class="row">
     <div class="col-12 col-xl-2">
       <h6 class="pt-2 text-end">Cari Surat:</h6>
     </div>
     <div class="col-12 col-xl-8">
-      <form method="get" action="" class="form-group">
+      <form method="post" action="" class="form-group">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Search data .." name="keyword">
           <div class="input-group-append">
@@ -92,61 +92,61 @@
       </form>
     </div>
   </div>
-  
-    <div class="d-flex justify-content-start align-items-center w-100 flex-wrap">
-    </div>
 </div>
 
 <div class="row">
-  <div class="col-12 col-xl-12">
-      <div class="card border-0 shadow mb-4">
-          <div class="card-body">
-              <div class="table-responsive">
-                  <table class="table table-centered table-nowrap mb-0 rounded">
-                      <thead class="thead-light">
-                          <tr>
-                              <th class="border-0 rounded-start">Nomor Surat</th>
-                              <th class="border-0">Kategori</th>
-                              <th class="border-0">Judul</th>
-                              <th class="border-0">Waktu Pengarsipan</th>
-                              <th class="border-0">Aksi</th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <!-- Item -->
-                          <?php foreach ($arsip as $row) :
-                          ?>
-                          <tr>
-                              <td><?= $row->nomor_surat; ?></td>
-                              <td><?= $row->kategori; ?></td>
-                              <td><?= $row->judul; ?></td>
-                              <td><?= $row->created_at; ?></td>
-                              <td>
-                                <a href="/delete/<?= $row->id_arsip; ?>" class="btn btn-danger btn-hapus" type="button">Hapus</a>
-                                <a href="/download/<?= $row->id_arsip; ?>" class="btn btn-warning">Unduh</a>
-                                <a href="/preview-<?= $row->id_arsip; ?>" class="btn btn-info" type="button">Lihat</a>
-                                <!-- <button class="btn btn-warning" type="button">Unduh</button>
-                                <button class="btn btn-info" type="button">Lihat</button> -->
-                              </td>
-                          </tr>
-                          <!-- End of Item -->
-                          <?php endforeach; ?>
-                      </tbody>
-                  </table>
-              </div>
+  <div class="col-12 col-xl-12 mb-3">
+    <div class="card border-0 shadow">
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-centered table-nowrap mb-0 rounded">
+                  <thead class="thead-light">
+                      <tr>
+                          <th class="border-0 rounded-start">Nomor Surat</th>
+                          <th class="border-0">Kategori</th>
+                          <th class="border-0">Judul</th>
+                          <th class="border-0">Waktu Pengarsipan</th>
+                          <th class="border-0">Aksi</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- Item -->
+                      <?php foreach ($arsip as $row) :
+                      ?>
+                      <tr>
+                          <td><?= $row->nomor_surat; ?></td>
+                          <td><?= $row->kategori; ?></td>
+                          <td><?= $row->judul; ?></td>
+                          <td><?= $row->created_at; ?></td>
+                          <td>
+                            <a href="/delete/<?= $row->id_arsip; ?>" class="btn btn-danger btn-hapus" type="button">Hapus</a>
+                            <a href="/download/<?= $row->id_arsip; ?>" class="btn btn-warning">Unduh</a>
+                            <a href="/preview-<?= $row->id_arsip; ?>" class="btn btn-info" type="button">Lihat</a>
+                            <!-- <button class="btn btn-warning" type="button">Unduh</button>
+                            <button class="btn btn-info" type="button">Lihat</button> -->
+                          </td>
+                      </tr>
+                      <!-- End of Item -->
+                      <?php endforeach; ?>
+                  </tbody>
+              </table>
           </div>
       </div>
+    </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12 mb-4">
+<div class="row px-4">
+  <div class="col-6 mb-4">
     <a href="/form">
-        <button class="btn btn-gray-800 d-inline-flex align-items-center me-2">
-            <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
-            Arsipkan Surat
-        </button>
+      <button class="btn btn-gray-800 d-inline-flex align-items-center me-2">
+        <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+        Arsipkan Surat
+      </button>
     </a>
+  </div>
+  <div class="col-6">
+    <?= $pager->links('arsip','pagination_data'); ?>
   </div>
 </div>
 

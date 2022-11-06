@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 
 <nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
-  <div class="container-fluid px-0 pt-2">
+  <div class="container-fluid px-0">
     <div
       class="d-flex justify-content-between w-100"
       id="navbarSupportedContent"
@@ -106,48 +106,17 @@
     <div class="col-12 col-xl-12">
         <div class="card border-0 shadow mb-4">
             <div class="card-body">
-              <div class="mb-4">
-                  <div class="row">
-                      <div class="col-2 pt-1">
-                          <label for="nomor">Nomor Surat</label>
-                      </div>
-                      <div class="col-8">
-                          <input type="text" name="nomor_surat" class="form-control " id="nomor" value="<?= $edit->nomor_surat; ?>" autofocus>
-                      </div>
-                  </div>
-              </div>
-              <div class="mb-4">
-                  <div class="row">
-                      <div class="col-2 pt-1">
-                          <label class="my-1 me-2" for="kategori">Kategori</label>
-                      </div>
-                      <div class="col-8">
-                          <select class="form-select" id="kategori" name="kategori">
-                              <option value="Undangan" <?= $edit->kategori == "Undangan" ? 'selected' : '' ?>>Undangan</option>
-                              <option value="Pengumuman" <?= $edit->kategori == "Pengumuman" ? 'selected' : '' ?>>Pengumuman</option>
-                              <option value="Nota Dinas" <?= $edit->kategori == "Nota Dinas" ? 'selected' : '' ?>>Nota Dinas</option>
-                              <option value="Pemberitahuan" <?= $edit->kategori == "Pemberitahuan" ? 'selected' : '' ?>>Pemberitahuan</option>
-                          </select>
-                      </div>
-                  </div>
-              </div>
-              <div class="mb-4">
-                  <div class="row">
-                      <div class="col-2 pt-1">
-                          <label for="judul">Judul</label>
-                      </div>
-                      <div class="col-8">
-                          <input type="text" name="judul" class="form-control" id="judul" value="<?= $edit->judul; ?>">
-                      </div>
-                  </div>
-              </div>
+              <input type="hidden" name="id_surat" class="form-control " value="<?= $edit->id_arsip; ?>">
               <div class="mb-2">
                   <div class="row">
                       <div class="col-2 pt-1">
                           <label for="filepdf" class="form-label">File Surat (PDF)</label>
                       </div>
                       <div class="col-8">
-                          <input type="file" name="filepdf" class="form-control" id="filepdf" value="<?= $edit->filepdf; ?>">
+                          <input type="file" name="filepdf" class="form-control <?= ($validation->hasError('filepdf')) ? 'is-invalid' : '' ?>" id="filepdf" value="<?= (old('filepdf')) ? old('filepdf') : $edit->filepdf; ?>">
+                          <div class="invalid-feedback">
+                            <?= $validation->getError('filepdf') ?>
+                          </div>
                       </div>
                   </div>
               </div>

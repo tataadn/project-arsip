@@ -41,12 +41,14 @@ $routes->set404Override();
 $routes->get('/', 'Arsip::home');
 //routes untuk menampilkan halaman utama
 $routes->get('/home', 'Arsip::dashboard');
+//routes untuk menampilkan pencarian data
+$routes->post('/home', 'Arsip::dashboard');
 //routes untuk mengunggah file
 $routes->get('/form', 'Arsip::form');
+$routes->post('/save', 'Arsip::save');
 //routes untuk mengedit file
 $routes->get('/edit-(:num)', 'Arsip::edit/$1');
-//routes untuk menyimpan data
-$routes->post('/save', 'Arsip::save');
+$routes->post('/update/(:num)', 'Arsip::update/$1');
 //routes untuk menghapus data
 $routes->get('/delete/(:num)', 'Arsip::delete/$1');
 //routes untuk preview pdf

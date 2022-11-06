@@ -26,9 +26,11 @@ class Arsip extends BaseController
             $cariArsip = $this->ArsipModel;
         }
 
-        $arsipModel = new ArsipModel();
-        $arsip = $arsipModel->findAll();
-        $data = array('arsip' => $arsip);
+        $data = [
+            'arsip' => $cariArsip->paginate(4,'arsip'),
+            'pager' => $this->ArsipModel->pager,
+            // 'currentPage' => $this->request->getVar('page_arsip') ? $this->request->getVar('page_arsip') : 1
+        ];
         return view('arsip/dashboard', $data);
     }
     
@@ -39,15 +41,7 @@ class Arsip extends BaseController
         ];
         return view('arsip/form', $data);
     }
-    
-    public function edit($id)
-    {
-        $arsipModel = new ArsipModel();
-        $edit = $arsipModel->detail_data($id);
-        $data = array('edit' => $edit);
-        return view('arsip/edit', $data);
-    }
-    
+
     public function save()
     {
         $validasi = !$this->validate([
@@ -103,6 +97,49 @@ class Arsip extends BaseController
             
             session()->setFlashdata('success','Data berhasil ditambahkan!');
             return redirect()->to('/form')->withInput();
+        }
+    }
+    
+    public function edit($id)
+    {
+        $arsipModel = new ArsipModel();
+        $edit = $arsipModel->detail_data($id);
+        $data = [
+            'edit' => $edit,
+            'validation' => \Config\Services::validation()
+        ];
+        return view('arsip/edit', $data);
+    }
+    
+    public function update($id)
+    {   
+        $validasi = !$this->validate([
+                        'filepdf' => [
+                            'rules' => 'uploaded[filepdf]|max_size[filepdf,2048]|ext_in[filepdf,pdf]|mime_in[filepdf,application/pdf]',
+                            'errors' => [
+                                'uploaded' => 'file harus diisi',
+                                'max_size' => 'ukuran file terlalu besar',
+                                'ext_in' => 'file harus berformat pdf',
+                                'mime_in' => 'file harus berformat pdf'
+                            ]
+                        ],
+                    ]);   
+
+        if($validasi){
+            session()->setFlashdata('error','Mohon cek kembali data Anda!');
+            return redirect()->to('/edit-'.$id)->withInput();
+        } 
+        
+        else{
+            $file_arsip = $this->request->getFile('filepdf');
+            $nama_file = $file_arsip->getRandomName();
+            $data = ['filepdf' => $nama_file];
+
+            $file_arsip->move('file_arsip', $nama_file); //directori upload file
+            $this->ArsipModel->update($id,$data);  
+            
+            session()->setFlashdata('success','Data berhasil diubah!');
+            return redirect()->to('/edit-'.$id)->withInput();
         }
     }
     
