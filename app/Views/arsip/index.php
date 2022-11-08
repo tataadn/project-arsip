@@ -104,7 +104,7 @@
                     </div>
                     <div class="d-flex row justify-content-center align-item-center">
                         <div class="col-12 col-sm-6 col-lg-3">
-                            <a href="/home">
+                            <a href="/login">
                                 <div class="card bg-white shadow-soft text-primary rounded mb-4">
                                     <div class="px-3 px-lg-4 py-5 text-center">
                                         <img src="assets/img/login.png" width="200" alt="">

@@ -100,7 +100,7 @@
                           <tr>
                             <td>Tanggal &nbsp;</td>
                             <td>: &nbsp;</td>
-                            <td>02 November 2022 - </td>
+                            <td>02 November 2022 - 08 November 2022</td>
                           </tr>
                         </table>
                         <a href="https://github.com/tataadn" target="_blank" class="btn btn-github d-inline-flex align-items-center mt-2" type="button">
