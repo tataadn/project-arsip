@@ -3,13 +3,16 @@
 namespace App\Controllers;
 
 use App\Models\ArsipModel;
+use App\Models\TotalModel;
 
 class Arsip extends BaseController
 {
     protected $ArsipModel;
+    protected $TotalModel;
     public function __construct()
     {
         $this->ArsipModel = new ArsipModel();
+        $this->TotalModel = new TotalModel();
     }
 
     public function home()
@@ -29,6 +32,11 @@ class Arsip extends BaseController
         $data = [
             'arsip' => $cariArsip->paginate(4,'arsip'),
             'pager' => $this->ArsipModel->pager,
+            'total_pengumuman' => $this->TotalModel->total_pengumuman(),
+            'total_undangan' => $this->TotalModel->total_undangan(),
+            'total_nota' => $this->TotalModel->total_nota(),
+            'total_pemberitahuan' => $this->TotalModel->total_pemberitahuan(),
+            'total' => $this->TotalModel->total(),
         ];
         return view('arsip/dashboard', $data);
     }
